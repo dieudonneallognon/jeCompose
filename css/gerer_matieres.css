@@ -1,0 +1,33 @@
+section { margin-top: 50px; }
+
+.panel-heading h3 { font-family:  Verdana, sans-serif; font-weight: bolder; }
+
+table { font-size: 15px; }
+
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td { vertical-align: middle; }
+
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td { border: 0px solid white; }
+
+thead {
+	font-variant: small-caps;
+	font-family: Verdana, sans-serif;
+}
+
+table, table thead th { text-align: center; }
+
+tbody tr td { font-family: monospace; text-align: center;}
+
+.btn-primary { font-weight: bolder; }
+
+label { font-weight: bold; }
+
+input { vertical-align: bottom; }
+

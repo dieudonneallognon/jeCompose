@@ -1,0 +1,14 @@
+footer {
+	border-top: 1px solid #B7B7B7;
+	height: 75px;
+	background: -webkit-linear-gradient(#FFFFFF, #F4F4F4, #EAEAEA);
+	background: -o-linear-gradient(#FFFFFF, #F4F4F4, #EAEAEA);
+	background: -moz-linear-gradient(#FFFFFF, #F4F4F4, #EAEAEA);
+	background: linear-gradient(#FFFFFF, #F4F4F4, #EAEAEA);
+	margin-top: 100px;
+}
+
+footer p {
+	margin-top : 25px;
+	font-family: monospace;
+}

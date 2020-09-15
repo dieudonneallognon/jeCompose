@@ -1,0 +1,42 @@
+section { margin-top: 10px; }
+
+table { font-size: 15px; }
+
+table, table thead th { text-align: center; }
+
+thead {
+	background-color: #CCCCCC;
+	font-family: Candara, sans-serif;
+	font-size: 20px;
+}
+
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+	vertical-align: middle;
+}
+
+
+tbody tr td { font-family: monospace; text-align: center;}
+tbody td:nth-child(1) { font-weight: bold; }
+
+.btn-warning, .btn-primary {
+	border-radius: 25px;
+	margin-bottom: 10px;
+}
+
+.ajoute, .qcm-err {
+	font-family: sans-serif;
+	padding-right: 0px;
+	padding-left: 0px;
+	display: none;
+}
+
+.panel-heading h3 {
+	font-size: 12px;
+	font-weight: bolder;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mes Matieres</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/matieres.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			
+			<div class="row">
+				<header class="col-xs-12">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<p class="navbar-brand">Je Compose.com</p>
+						</div>
+						<ul class="nav navbar-nav pull-right hidden-xs text-center">
+							<li>
+								<a href="matieres.html"><span class="glyphicon glyphicon-book"></span><br>Mes matières</a>
+							</li>
+							<li>
+								<a href="gerer_matieres.html"><span class="glyphicon glyphicon-plus-sign"></span> / <span class="glyphicon glyphicon-minus-sign"></span><br>Gérer mes matières</a>
+							</li>
+							<li>
+								<a href="index.html"><span class="glyphicon glyphicon-log-out"><br></span><br>Déconnexion</a>
+							</li>
+						</ul>
+
+						<div class="pull-left visible-xs navigateur">
+							<p>
+								<a href="matieres.html"><span class="glyphicon glyphicon-book"></span> Mes matières</a>
+							</p>
+							<p>
+								<a href="gerer_matieres.html"><span class="glyphicon glyphicon-plus-sign"></span> / <span class="glyphicon glyphicon-minus-sign"></span> Gérer mes matières</a>
+							</p>
+							<p>
+								<a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
+							</p>
+						</div>
+					</nav>
+				</header>
+			</div>
+
+			<div class="row">
+				<section class="col-sm-6 col-sm-offset-3">
+					<legend>Programmation</legend>
+
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Matieres</th>
+									<th>Dates de Compositions</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Matiere 1</td>
+									<td>Date 1</td>
+									<td><a class="btn btn-primary bt-sm" href="resultat.html">
+										<span class="glyphicon glyphicon-list-alt"> </span> Résultat</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Matiere 2</td>
+									<td>Date 2</td>
+									<td style="color: #DC143C;">Manqué!</td>
+								</tr>
+								<tr>
+									<td>Matiere 3</td>
+									<td>Date 3</td>
+									<td style="color: #999999;">-- Examen en attente --</td>
+								</tr>
+								<tr>
+									<td>Matiere 4</td>
+									<td>Date 4</td>
+									<td><a href="qcm.html" class="btn btn-warning btn-sm">
+										<span class="glyphicon glyphicon-pencil"></span> Composer</a>
+									</td>
+								</tr>
+								<tr>
+									<td>Matiere 5</td>
+									<td>Date 5</td>
+									<td>-- Résultat en attente --</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4 hidden-xs">
+							<a href="gerer_matieres.html" class="btn btn-success">S'enregistrer pour une matière !</a>
+						</div>
+						<div class="col-sm-4 col-sm-offset-4 visible-xs">
+							<a href="gerer_matieres.html" class="btn btn-success btn-block">S'enregistrer pour une matière !</a>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="row">
+				<footer class="col-xs-12">
+					<p class="text-center">Copyright 2019 - Tout droit réservé.</p>
+				</footer>
+			</div>
+
+		</div>
+		
+		<script src="jquery/jquery-3.3.1.js"></script>
+		<script src="js/matieres.js"></script>
+	</body>
+</html>

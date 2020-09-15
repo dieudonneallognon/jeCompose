@@ -1,0 +1,30 @@
+section { margin-top: 30px; }
+
+h1 {
+	text-align: center;
+	text-decoration: underline;
+	font-family: 'Courrier New', Verdana, sans-serif;
+	font-weight: bolder;
+}
+
+.panel-title { text-align: center; }
+
+h3 {
+	font-family: Verdana;
+	font-weight: bolder;
+}
+
+.panel-body {
+	text-align: left;
+	font-weight: bolder;
+}
+
+.panel-body, .panel-footer { font-family: monospace; }
+
+ul li { list-style: none; }
+
+li input{ vertical-align: top; }
+
+label { font-weight: lighter; }
+
+.btn { font-weight: bolder; }

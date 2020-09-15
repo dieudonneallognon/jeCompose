@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gérer mes matières</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/gerer_matieres.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+
+			<div class="row">
+				<header class="col-xs-12">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<p class="navbar-brand">Je Compose.com</p>
+						</div>
+						<ul class="nav navbar-nav pull-right hidden-xs text-center">
+							<li>
+								<a href="matieres.html"><span class="glyphicon glyphicon-book"></span><br>Mes matières</a>
+							</li>
+							<li>
+								<a href="gerer_matieres.html"><span class="glyphicon glyphicon-plus-sign"></span> / <span class="glyphicon glyphicon-minus-sign"></span><br>Gérer mes matières</a>
+							</li>
+							<li>
+								<a href="index.html"><span class="glyphicon glyphicon-log-out"><br></span><br>Déconnexion</a>
+							</li>
+						</ul>
+
+						<div class="pull-left visible-xs navigateur">
+							<p>
+								<a href="matieres.html"><span class="glyphicon glyphicon-book"></span> Mes matières</a>
+							</p>
+							<p>
+								<a href="gerer_matieres.html"><span class="glyphicon glyphicon-plus-sign"></span> / <span class="glyphicon glyphicon-minus-sign"></span> Gérer mes matières</a>
+							</p>
+							<p>
+								<a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
+							</p>
+						</div>
+					</nav>
+				</header>
+			</div>
+
+			<div class="row">
+				<section class="col-sm-6 col-sm-offset-3">
+					<form method="post" action="matieres.html">
+						<article class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">S'enregistrer pour des matières</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Matieres</th>
+												<th>Dates de Compositions</th>
+												<th>Ajouter</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Matiere 1</td>
+												<td>Date 1</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 2</td>
+												<td>Date 2</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 3</td>
+												<td>Date 3</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 4</td>
+												<td>Date 4</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</article>
+
+						<article class="panel panel-danger">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Supprimer des matières</h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Matieres</th>
+												<th>Dates de Compositions</th>
+												<th>Supprimer</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Matiere 1</td>
+												<td>Date 1</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 2</td>
+												<td>Date 2</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 3</td>
+												<td>Date 3</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+											<tr>
+												<td>Matiere 4</td>
+												<td>Date 4</td>
+												<td><input type="checkbox" name=""></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</article>
+						<div class="row">
+							<div class="col-sm-4 col-sm-offset-4 hidden-xs">
+								<input type="submit" class="btn btn-primary" value="Appliquer les modifications">
+							</div>
+							<div class="col-sm-4 col-sm-offset-4 visible-xs">
+								<input type="submit" class="btn btn-primary btn-block" value="Appliquer les modifications">
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+
+			<div class="row">
+				<footer class="col-xs-12">
+					<p class="text-center">Copyright 2019 - Tout droit réservé.</p>
+				</footer>
+			</div>
+
+		</div>
+
+		<script src="jquery/jquery-3.3.1.js"></script>
+		<script src="js/gerer_matieres.js"></script>
+	</body>
+</html>

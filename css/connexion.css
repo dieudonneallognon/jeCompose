@@ -1,0 +1,12 @@
+legend {
+	font-size: 35px;
+	font-family: 'Agency FB', 'Courier new', Verdana;
+	font-variant: small-caps;
+	font-weight: bolder;
+}
+
+form { margin-top: 120px; }
+
+.btn { font-weight: bolder; }
+
+.alert { display: none; }

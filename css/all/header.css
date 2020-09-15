@@ -1,0 +1,21 @@
+.navbar-brand {
+	font-size: 27px;
+	font-family: 'Berlin Sans FB', Verdana, sans-serif;
+	margin-bottom: 20px;
+}
+
+.navbar li:hover { background-color: #848484; }
+
+.navigateur a, .navbar-nav a {
+	color: #777;
+	font-size: 13px;
+	padding: 5px 5px;
+}
+
+.navigateur a:hover, .navbar-nav a:hover {
+	text-decoration: none;
+	color: #333;
+	background-color: #848484;
+}
+
+.actif { background-color: #e7e7e7; }

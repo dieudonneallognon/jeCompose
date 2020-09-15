@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Connexion</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/connexion.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+
+			<div class="row">
+				<header class="col-xs-12">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<p class="navbar-brand">Je Compose.com</p>
+						</div>
+						<ul class="nav navbar-nav pull-right hidden-xs text-center">
+							<li>
+								<a href="index.html"><span class="glyphicon glyphicon-th-list"></span><br>Acceuil</a>
+							</li>
+							<li>
+								<a href="inscription.html"><span class="glyphicon glyphicon-edit"></span><br>Inscription</a>
+							</li>
+							<li>
+								<a href="connexion.html"><span class="glyphicon glyphicon-log-in"></span><br>Connexion</a>
+							</li>
+						</ul>
+
+						<div class="pull-letf visible-xs navigateur">
+							<p>
+								<a href="index.html"><span class="glyphicon glyphicon-th-list"></span> Acceuil</a>
+							</p>
+							<p>
+								<a href="inscription.html"><span class="glyphicon glyphicon-edit"></span> Inscription</a>
+							</p>
+							<p>
+								<a href="connexion.html"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
+							</p>
+						</div>
+					</nav>
+				</header>
+			</div>
+
+			<div class="row">
+				<form class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="matieres.html">
+					<legend class="text-center">Se Connecter</legend>
+					<div class="row">
+						<div class="form-group text-center matricule">
+							<label for="matricule" class="col-sm-3 control-label">Matricule:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="text" name="matricule" id="matricule">
+								<div class="alert alert-block alert-matricule" style="display:none">
+									<span></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group text-center mdp">
+							<label for="mdp" class="col-sm-3 control-label">Mot de passe:</label>
+							<div class="col-sm-9">
+								<input class="form-control" type="password" name="mdp" id="mdp">
+								<div class="alert alert-block alert-mdp" style="display:none">
+									<span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<button class="btn btn-primary col-xs-offset-5" style="font-weight: bolder;">
+							<span class="glyphicon glyphicon-ok-sign"></span>  Connexion
+						</button>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="row">
+				<footer class="col-xs-12">
+					<p class="text-center">Copyright 2019 - Tout droit réservé.</p>
+				</footer>
+			</div>
+			
+		</div>
+		
+		<script src="jquery/jquery-3.3.1.js"></script>
+		<script src="js/connexion.js"></script>
+	</body>
+</html>

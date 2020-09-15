@@ -1,0 +1,14 @@
+Résultat Administration sous Linux
+Choix -- Correction
+1. b -- b
+2. a -- a
+3. c -- a
+4. b -- c
+5. rien -- b
+6. c -- c
+7. a -- b
+8. a -- c
+9. a -- b
+10. b -- c
+Note: 6/20
+Mention: Très Inssufisant
