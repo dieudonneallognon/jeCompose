@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	session_start(); require_once('db-config.php');
 
 	try
 	{	// On se connecte à MySQL
-		$bdd = new PDO('mysql:host=localhost;dbname=jecompose', 'root', '');
+		$bdd = new PDO($_ENV['DB_SYS'].':host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
 	}
 
 	catch(Exception $e)

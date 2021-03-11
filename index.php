@@ -1,6 +1,6 @@
 <?php
-	session_start();
-	session_destroy();
+    session_start(); require_once('traitements/db-config.php');
+    session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,14 +12,14 @@
 
 	<body>
 		<div class="container-fluid">
-			
+
 			<?php include("includes/navbar-home.html"); ?>
 
 			<div class="row">
 				<h1 class="text-center">Bienvenue  sur la plateforme de composition</h1>
 				<section class="col-sm-6 col-sm-offset-3 well">
 					<legend class="text-center">Emplois du temps des compositions</legend>
-					
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered">
 							<thead>
@@ -32,85 +32,76 @@
 							</thead>
 							<tbody>
 								<?php
-								
-									try
-									{	// On se connecte à MySQL
-										$bdd = new PDO('mysql:host=localhost;dbname=jecompose', 'root', '');
-									}
+                                    try {	// On se connecte à MySQL
+                                        $bdd = new PDO($_ENV['DB_SYS'].':host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+                                    } catch (Exception $e) {
+                                    } catch (Exception $e) {
+                                        // En cas d'erreur, on affiche un message et on arrête tout
+                                        die('Erreur : '.$e->getMessage());
+                                    }
 
-									catch(Exception $e)
-									{
-										// En cas d'erreur, on affiche un message et on arrête tout
-										die('Erreur : '.$e->getMessage());
-									}
-								
-									$req = $bdd->query('SET NAMES "utf8"');
+                                    $req = $bdd->query('SET NAMES "utf8"');
 
-									$reponse = $bdd->query('SELECT * FROM matieres ORDER BY date_compo ASC, heure_debut ASC, heure_fin ASC');
-									$jour = date('d');
-									$mois = date('m');
-									$annee = date('Y');
-									$heure = date('H') + 1;
-									$minute = date('i');
-									
+                                    $reponse = $bdd->query('SELECT * FROM matieres ORDER BY date_compo ASC, heure_debut ASC, heure_fin ASC');
+                                    $jour = date('d');
+                                    $mois = date('m');
+                                    $annee = date('Y');
+                                    $heure = date('H') + 1;
+                                    $minute = date('i');
 
-									$Dateactuelle = $annee.'-'.$mois.'-'.$jour;
-									$Dateactuelle = strtotime($Dateactuelle);
 
-									$HeureActuelle = $heure.':'.$minute ;
-									$HeureActuelle = strtotime($HeureActuelle);
+                                    $Dateactuelle = $annee.'-'.$mois.'-'.$jour;
+                                    $Dateactuelle = strtotime($Dateactuelle);
 
-									$MatieresAffichees =0;
+                                    $HeureActuelle = $heure.':'.$minute ;
+                                    $HeureActuelle = strtotime($HeureActuelle);
 
-									while ($donnees = $reponse->fetch())
-									{
-										$heure_fin = strtotime($donnees['heure_fin']);
-										$heure_debut = strtotime($donnees['heure_debut']);
-										$date_compo = strtotime($donnees['date_compo']);
+                                    $MatieresAffichees =0;
 
-										if ($Dateactuelle < $date_compo)
-										{
-											echo '<tr>';
-												echo '<td>'. $donnees['nom_mat']. '</td>';
-												echo '<td>'. $donnees['date_compo']. '</td>';
-												echo '<td>'. $donnees['heure_debut']. '</td>';
-												echo '<td>'. $donnees['heure_fin']. '</td>';
-											echo '</tr>';
-											$MatieresAffichees++;
-										}
-										else if ($Dateactuelle == $date_compo && $HeureActuelle < $heure_fin)
-										{
-											echo '<tr>';
-												echo '<td>'. $donnees['nom_mat']. '</td>';
-												echo '<td>'. $donnees['date_compo']. '</td>';
-												echo '<td>'. $donnees['heure_debut']. '</td>';
-												echo '<td>'. $donnees['heure_fin']. '</td>';
-											echo '</tr>';
-											$MatieresAffichees++;
-										}
-									}
-									if ($MatieresAffichees == 0)	
-									{
-										echo '<tr>';
-											echo '<td> -- </td>';
-											echo '<td> -- </td>';
-											echo '<td> -- </td>';
-											echo '<td> -- </td>';
-										echo '</tr>';
-									}	
-									$reponse->closeCursor();
-								?>
+                                    while ($donnees = $reponse->fetch()) {
+                                        $heure_fin = strtotime($donnees['heure_fin']);
+                                        $heure_debut = strtotime($donnees['heure_debut']);
+                                        $date_compo = strtotime($donnees['date_compo']);
+
+                                        if ($Dateactuelle < $date_compo) {
+                                            echo '<tr>';
+                                            echo '<td>'. $donnees['nom_mat']. '</td>';
+                                            echo '<td>'. $donnees['date_compo']. '</td>';
+                                            echo '<td>'. $donnees['heure_debut']. '</td>';
+                                            echo '<td>'. $donnees['heure_fin']. '</td>';
+                                            echo '</tr>';
+                                            $MatieresAffichees++;
+                                        } elseif ($Dateactuelle == $date_compo && $HeureActuelle < $heure_fin) {
+                                            echo '<tr>';
+                                            echo '<td>'. $donnees['nom_mat']. '</td>';
+                                            echo '<td>'. $donnees['date_compo']. '</td>';
+                                            echo '<td>'. $donnees['heure_debut']. '</td>';
+                                            echo '<td>'. $donnees['heure_fin']. '</td>';
+                                            echo '</tr>';
+                                            $MatieresAffichees++;
+                                        }
+                                    }
+                                    if ($MatieresAffichees == 0) {
+                                        echo '<tr>';
+                                        echo '<td> -- </td>';
+                                        echo '<td> -- </td>';
+                                        echo '<td> -- </td>';
+                                        echo '<td> -- </td>';
+                                        echo '</tr>';
+                                    }
+                                    $reponse->closeCursor();
+                                ?>
 							</tbody>
 						</table>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-xs-12">
 							<button class="btn btn-warning btn-block" type="submit">Voir les règles de compositions <span class="glyphicon
 							glyphicon-exclamation-sign"></span></button>
 						</div>
 					</div>
-					
+
 					<article class="panel panel-warning">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Règles de Compositions
@@ -133,9 +124,9 @@
 			</div>
 
 			<?php include("includes/footer.html"); ?>
-			
+
 		</div>
-		
+
 		<script src="js/index.js"></script>
 	</body>
 </html>

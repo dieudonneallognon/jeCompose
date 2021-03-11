@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	session_start(); require_once('db-config.php');
 
 	try
 	{	// On se connecte à MySQL
-		$bdd = new PDO('mysql:host=localhost;dbname=jecompose', 'root', '');
+		$bdd = new PDO($_ENV['DB_SYS'].':host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
 	}
 
 	catch(Exception $e)
@@ -38,11 +38,9 @@
 	{
 		$fichier = fopen('../fichiers_composition/'.$_SESSION['matricule'].'-'.$_SESSION['id_mat'].'.txt', 'w');
 
-		fputs($fichier, 'Résultat '.$_SESSION['nm_mat'].'
-');
+		fputs($fichier, 'Résultat '.$_SESSION['nm_mat'].'');
 
-		fputs($fichier, 'Choix -- Correction
-');
+		fputs($fichier, 'Choix -- Correction');
 
 		$rep = $bdd->prepare('SELECT vraie_rep FROM corriger WHERE id_mat=? ORDER BY id_question');
 		$rep->execute(array($_SESSION['id_mat']));
@@ -59,8 +57,7 @@
 		 	{
 		 		$req1->execute(array($_SESSION['matricule'], $_SESSION['id_mat'], $i, $_POST['q'.$i]));
 
-		 		fputs($fichier, $i.'. '.$_POST['q'.$i].' -- '.$donnees['vraie_rep'].'
-');
+		 		fputs($fichier, $i.'. '.$_POST['q'.$i].' -- '.$donnees['vraie_rep'].'');
 
 		 		if ($_POST['q'.$i] == $donnees['vraie_rep']) $note+=2;
 		 	}
@@ -68,8 +65,7 @@
 		 	{
 		 		$req1->execute(array($_SESSION['matricule'], $_SESSION['id_mat'], $i, NULL));
 
-		 		fputs($fichier, $i.'. rien -- '.$donnees['vraie_rep'].'
-');
+		 		fputs($fichier, $i.'. rien -- '.$donnees['vraie_rep'].'');
 		 	}
 		}
 
@@ -82,8 +78,7 @@
 		$req1->closeCursor();
 		$req2->closeCursor();
 
-		fputs($fichier, 'Note: '.$note.'/20
-');
+		fputs($fichier, 'Note: '.$note.'/20');
 
 			if ($note >= 18 && $note <= 20)
 			{

@@ -1,5 +1,5 @@
 <?php
-	session_start();
+    session_start(); require_once('traitements/db-config.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 		<div class="container-fluid">
 
 			<?php include("includes/navbar-home.html"); ?>
-			
+
 			<div class="row">
 				<form class="col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="traitements/traitement_inscription.php">
 					<legend class="text-center">Inscription</legend>
@@ -71,15 +71,15 @@
 						</div>
 					</form>
 				</div>
-			
+
 			<?php include("includes/footer.html"); ?>
-			
+
 		</div>
 
 		<script src="js/inscription.js"></script>
 <?php
-	if (isset($_SESSION['err_ins']) && $_SESSION['err_ins'] == 1) {
-		echo '<script>
+    if (isset($_SESSION['err_ins']) && $_SESSION['err_ins'] == 1) {
+        echo '<script>
 				$(function (){
 					$("div.matricule-mdp div.matricule").addClass("has-error");
 					$("div.alert-matricule").addClass("alert-danger");
@@ -88,8 +88,8 @@
 				});
 			</script>';
 
-		unset($_SESSION['err_ins']);
-	}
+        unset($_SESSION['err_ins']);
+    }
 ?>
 	</body>
 </html>
