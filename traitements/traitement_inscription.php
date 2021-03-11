@@ -29,16 +29,16 @@ while ($donnes = $rep->fetch()) {
 }
 
 if ($unique) {
-    // $req = $bdd->prepare('INSERT INTO etudiant (matricule, nom, prenom, mot_de_passe) VALUES(?, ?, ?, ? )');
-    // $req->execute(array( $_POST['matricule'], $_POST['nom'], $_POST['prenom'], $_POST['mdp'] ));
+    $req = $bdd->prepare('INSERT INTO etudiant (matricule, nom, prenom, mot_de_passe) VALUES(?, ?, ?, ? )');
+    $req->execute(array( $_POST['matricule'], $_POST['nom'], $_POST['prenom'], $_POST['mdp'] ));
 
-    // $_SESSION['matricule'] = $_POST['matricule'];
-    // $_SESSION['motDePasse'] = $_POST['mdp'];
+    $_SESSION['matricule'] = $_POST['matricule'];
+    $_SESSION['motDePasse'] = $_POST['mdp'];
 
-    // $req = $bdd->prepare(
-    //     'INSERT INTO matieres (id_mat, date_compo, heure_debut, nom_mat, heure_fin)
-    //      VALUES (?, ?, ?, ?, ?)'
-    // );
+    $req = $bdd->prepare(
+        'INSERT INTO matieres (id_mat, date_compo, heure_debut, nom_mat, heure_fin)
+         VALUES (?, ?, ?, ?, ?)'
+    );
 
     // $req->execute(array(
     //  'edu'.$_POST['matricule'],
@@ -63,7 +63,7 @@ if ($unique) {
 
     // $req->execute();
 
-    echo('ok');
+    echo('okdoke');
 
 //header('Location: ../valide.html');
 } else {
