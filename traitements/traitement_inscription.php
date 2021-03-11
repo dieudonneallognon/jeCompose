@@ -31,7 +31,7 @@
         $_SESSION['matricule'] = $_POST['matricule'];
         $_SESSION['motDePasse'] = $_POST['mdp'];
 
-    header('Location: ../valide.html');
+        header('Location: ../connexion.php');
     } else {
         $_SESSION['err_ins'] = 1;
         header('Location: ../inscription.php');
