@@ -1,5 +1,5 @@
 <?php
-    session_start(); require_once('traitements/db-config.php');
+    session_start(); require_once('db-config.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 			<?php include("includes/navbar-home.html"); ?>
 
 			<div class="row">
-				<form class="col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="traitements/traitement_inscription.php">
+				<form class="col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="traitement_inscription.php">
 					<legend class="text-center">Inscription</legend>
 						<div class="row">
 							<div class="form-group text-center nom">

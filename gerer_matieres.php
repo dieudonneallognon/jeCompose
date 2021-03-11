@@ -1,5 +1,5 @@
 <?php
-	session_start(); require_once('traitements/db-config.php');
+	session_start(); require_once('db-config.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 
 			<div class="row">
 				<section class="col-sm-6 col-sm-offset-3">
-					<form method="post" action="traitements/traitement_gerer_matieres.php">
+					<form method="post" action="traitement_gerer_matieres.php">
 						<article class="panel panel-success">
 							<div class="panel-heading">
 								<h3 class="panel-title text-center">Composer</h3>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('traitements/db-config.php');
+    require_once('db-config.php');
     $_SESSION['id_mat'] = $_GET['id'];
     $_SESSION['nm_mat'] = $_SESSION[$_GET['id']];
 ?>

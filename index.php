@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('traitements/db-config.php');
+    require_once('db-config.php');
     session_destroy();
 ?>
 <!DOCTYPE html>

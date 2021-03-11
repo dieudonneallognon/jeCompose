@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('traitements/db-config.php');
+    require_once('db-config.php');
     $_SESSION['id_mat'] = $_GET['id'];
     $_SESSION['nm_mat'] = $_SESSION[$_GET['id']];
 ?>
@@ -21,7 +21,7 @@
             <div class="row">
                 <section class="col-sm-6 col-sm-offset-3">
                     <h1></h1><br>
-                    <form method="post" action="traitements/traitement_qcm.php">
+                    <form method="post" action="traitement_qcm.php">
 
                         <?php
                             /*if (isset($_SESSION['id_mat'])) {
