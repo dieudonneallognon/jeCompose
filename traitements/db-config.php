@@ -1,7 +1,5 @@
 <?php
 
-
-
 $_ENV['DB_SYS']= 'pgsql';
 $_ENV['DB_HOST']= 'ec2-108-128-104-50.eu-west-1.compute.amazonaws.com';
 $_ENV['DB_PORT']= '5432';
