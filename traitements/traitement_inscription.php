@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once('db-config.php');
+//session_start();
+//require_once('db-config.php');
 
 $_SESSION['err'] = 1;
 
@@ -63,8 +63,8 @@ if ($unique) {
 
      $req->execute();*/
 
-
-    header('Location: ../valide.html');
+     echo 'ok';
+   // header('Location: ../valide.html');
 } else {
     $_SESSION['err_ins'] = 1;
     header('Location: ../inscription.php');
