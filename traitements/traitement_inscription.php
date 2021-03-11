@@ -35,25 +35,17 @@ if ($unique) {
     $_SESSION['matricule'] = $_POST['matricule'];
     $_SESSION['motDePasse'] = $_POST['mdp'];
 
-    $req = $bdd->prepare(
+    /*$req = $bdd->prepare(
         'INSERT INTO matieres (id_mat, date_compo, heure_debut, nom_mat, heure_fin)
          VALUES (?, ?, ?, ?, ?)'
     );
-
-    $req->execute(array(
-     'edu'.$_POST['matricule'],
-     date('Y-m-d'),
-     date('H:i:s', strtotime('+ 1 hour')),
-     'MAtière de Test',
-     date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
-
 
     $req->execute(array(
         "b",
         date('Y-m-d'),
         date('H:i:s', strtotime('+ 1 hour')),
         'MAtière de Test',
-        date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
+        date('H:i:s', strtotime('+ 1 hour 600 seconds'))));*/
 
 
 
