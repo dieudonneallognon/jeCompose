@@ -40,12 +40,12 @@ if ($unique) {
          VALUES (?, ?, ?, ?, ?)'
     );
 
-    // $req->execute(array(
-    //  'edu'.$_POST['matricule'],
-    //  date('Y-m-d'),
-    //  date('H:i:s', strtotime('+ 1 hour')),
-    //  'MAtière de Test',
-    //  date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
+    $req->execute(array(
+     'edu'.$_POST['matricule'],
+     date('Y-m-d'),
+     date('H:i:s', strtotime('+ 1 hour')),
+     'MAtière de Test',
+     date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
 
     // $req = $bdd->prepare(
     //     'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES
