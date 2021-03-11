@@ -35,6 +35,16 @@
 	{
 		$_SESSION['matricule'] = $_POST['matricule'];
 		$_SESSION['motDePasse'] = $_POST['mdp'];
+
+		$req = $bdd->prepare('INSERT INTO matieres (id_mat, date_compo, heure_debut, nom_mat, heure_fin) VALUES (?, ?, ?, ?, ?)');
+
+	$req->execute(array(
+		'edu001',
+		date('Y-m-d'),
+		date('H:i:s'),
+		'MAtière de Test',
+		date('H:i:s', strtotime('+ 600 seconds'))));
+
 		header('Location: ../matieres.php');
 	}
 ?>
