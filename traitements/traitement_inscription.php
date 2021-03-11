@@ -49,16 +49,16 @@ if ($unique) {
 
     $req = $bdd->prepare(
         'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES
-         ("b", edu'.$_POST['matricule'].', 1),
-         ("c", edu'.$_POST['matricule'].', 2),
-         ("c", edu'.$_POST['matricule'].', 3),
-         ("c", edu'.$_POST['matricule'].', 4),
-         ("b", edu'.$_POST['matricule'].', 5),
-         ("b", edu'.$_POST['matricule'].', 6),
-         ("b", edu'.$_POST['matricule'].', 7),
-         ("a", edu'.$_POST['matricule'].', 8),
-         ("9", edu'.$_POST['matricule'].', 9),
-         ("10", edu'.$_POST['matricule'].', 10)'
+         ("b", "edu'.$_POST['matricule'].'", 1),
+         ("c", "edu'.$_POST['matricule'].'", 2),
+         ("c", "edu'.$_POST['matricule'].'", 3),
+         ("c", "edu'.$_POST['matricule'].'", 4),
+         ("b", "edu'.$_POST['matricule'].'", 5),
+         ("b", "edu'.$_POST['matricule'].'", 6),
+         ("b", "edu'.$_POST['matricule'].'", 7),
+         ("a", "edu'.$_POST['matricule'].'", 8),
+         ("c", "edu'.$_POST['matricule'].'", 9),
+         ("c", "edu'.$_POST['matricule'].'", 10)'
     );
 
     $req->execute();
