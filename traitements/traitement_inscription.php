@@ -20,13 +20,13 @@ try {
 
 $unique = true;
 
-// $rep = $bdd->query('SELECT * FROM etudiant');
+$rep = $bdd->query('SELECT * FROM etudiant');
 
-// while ($donnes = $rep->fetch()) {
-//     if ($_POST['matricule'] == $donnes['matricule']) {
-//         $unique = false;
-//     }
-// }
+while ($donnes = $rep->fetch()) {
+    if ($_POST['matricule'] == $donnes['matricule']) {
+        $unique = false;
+    }
+}
 
 if ($unique) {
     // $req = $bdd->prepare('INSERT INTO etudiant (matricule, nom, prenom, mot_de_passe) VALUES(?, ?, ?, ? )');
