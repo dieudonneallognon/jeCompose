@@ -16,7 +16,7 @@
 			<?php include("includes/navbar-home.html"); ?>
 
 			<div class="row">
-				<form class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="traitement_connexion.php">
+				<form class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 well form-horizontal" method="post" action="traitements/traitement_connexion.php">
 					<legend class="text-center">Se Connecter</legend>
 					<div class="row">
 						<div class="alert alert-block alert-erreur text-center">

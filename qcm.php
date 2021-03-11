@@ -21,7 +21,7 @@
             <div class="row">
                 <section class="col-sm-6 col-sm-offset-3">
                     <h1></h1><br>
-                    <form method="post" action="traitement_qcm.php">
+                    <form method="post" action="traitements/traitement_qcm.php">
 
                         <?php
                             /*if (isset($_SESSION['id_mat'])) {
