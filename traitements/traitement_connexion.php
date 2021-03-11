@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('db-config.php');
+require_once('../db-config.php');
 
 // On se connecte à MySQL
 try {
