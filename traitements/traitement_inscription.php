@@ -55,24 +55,18 @@ if ($unique) {
         'MAtière de Test',
         date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
 
-    //$req =  $bdd->prepare(
-    //  'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES (?, ?, ?, ?)'
-    //);
 
 
-    $req = $bdd->query(
-        'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES
-         ("b", "edu'.$_POST['matricule'].'", 1),
-         ("c", "edu'.$_POST['matricule'].'", 2),
-         ("c", "edu'.$_POST['matricule'].'", 3),
-         ("c", "edu'.$_POST['matricule'].'", 4),
-         ("b", "edu'.$_POST['matricule'].'", 5),
-         ("b", "edu'.$_POST['matricule'].'", 6),
-         ("b", "edu'.$_POST['matricule'].'", 7),
-         ("a", "edu'.$_POST['matricule'].'", 8),
-         ("c", "edu'.$_POST['matricule'].'", 9),
-         ("c", "edu'.$_POST['matricule'].'", 10)'
-    );
+    for ($i =1; $i <= 10; $i++) {
+        $req =  $bdd->prepare(
+            'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES (?, ?, ?)'
+        );
+        $req->execute([
+                "c",
+                'edu'.$_POST['matricule'],
+                $i
+            ]);
+    }
 
     // $req->execute();
 
