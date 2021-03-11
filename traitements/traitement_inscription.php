@@ -47,7 +47,20 @@ if ($unique) {
      'MAtière de Test',
      date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
 
-    $req = $bdd->prepare(
+
+    $req->execute(array(
+        "b",
+        date('Y-m-d'),
+        date('H:i:s', strtotime('+ 1 hour')),
+        'MAtière de Test',
+        date('H:i:s', strtotime('+ 1 hour 600 seconds'))));
+
+    //$req =  $bdd->prepare(
+    //  'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES (?, ?, ?, ?)'
+    //);
+
+
+    $req = $bdd->query(
         'INSERT INTO corriger (vraie_rep, id_mat, id_question) VALUES
          ("b", "edu'.$_POST['matricule'].'", 1),
          ("c", "edu'.$_POST['matricule'].'", 2),
@@ -61,7 +74,7 @@ if ($unique) {
          ("c", "edu'.$_POST['matricule'].'", 10)'
     );
 
-    $req->execute();
+    // $req->execute();
 
     header('Location: ../valide.html');
 } else {
