@@ -59,7 +59,7 @@
 
                                         $matieresTrouvee = false;
 
-var_dump($reponse);
+echo($reponse);
 
                                         while ($donnees = $reponse->fetch()) {
                                             $heure_fin = strtotime($donnees['heure_fin']);
