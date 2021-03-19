@@ -43,7 +43,7 @@
                                             die('Erreur : '.$e->getMessage());
                                         }
 
-                                        $reponse = $bdd->query('SELECT * FROM matieres ORDER BY matieres.date_compo ASC, matieres.heure_debut ASC, matieres.heure_fin ASC');
+                                        $reponse = $bdd->query('SELECT * FROM matieres WHERE id_mat NOT IN (SELECT id_mat FROM enregistrer WHERE matricule=' .$_SESSION['matricule']. ') ORDER BY matieres.date_compo ASC, matieres.heure_debut ASC, matieres.heure_fin ASC');
 
                                         $jour = date('d');
                                         $mois = date('m');
@@ -59,7 +59,7 @@
 
                                         $matieresTrouvee = false;
 
-echo($reponse);
+var_dump($reponse);
 
                                         while ($donnees = $reponse->fetch()) {
                                             $heure_fin = strtotime($donnees['heure_fin']);

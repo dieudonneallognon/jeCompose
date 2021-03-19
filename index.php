@@ -40,9 +40,7 @@
                                     die('Erreur : '.$e->getMessage());
                                 }
 
-                                $req = $bdd->query('SET NAMES "utf8"');
-
-                                $reponse = $bdd->query('SELECT * FROM matieres ORDER BY date_compo ASC, heure_debut ASC, heure_fin ASC');
+                                $reponse = $bdd->query('SELECT * FROM matieres');
                                 $jour = date('d');
                                 $mois = date('m');
                                 $annee = date('Y');
@@ -51,6 +49,8 @@
 
 
                                 $Dateactuelle = $annee.'-'.$mois.'-'.$jour;
+                                var_dump($Dateactuelle);
+                                var_dump($reponse);
                                 $Dateactuelle = strtotime($Dateactuelle);
 
                                 $HeureActuelle = $heure.':'.$minute ;
@@ -63,23 +63,23 @@
                                     $heure_debut = strtotime($donnees['heure_debut']);
                                     $date_compo = strtotime($donnees['date_compo']);
 
-                                    if ($Dateactuelle < $date_compo) {
-                                        echo '<tr>';
-                                        echo '<td>'. $donnees['nom_mat']. '</td>';
-                                        echo '<td>'. $donnees['date_compo']. '</td>';
-                                        echo '<td>'. $donnees['heure_debut']. '</td>';
-                                        echo '<td>'. $donnees['heure_fin']. '</td>';
-                                        echo '</tr>';
-                                        $MatieresAffichees++;
-                                    } elseif ($Dateactuelle == $date_compo && $HeureActuelle < $heure_fin) {
-                                        echo '<tr>';
-                                        echo '<td>'. $donnees['nom_mat']. '</td>';
-                                        echo '<td>'. $donnees['date_compo']. '</td>';
-                                        echo '<td>'. $donnees['heure_debut']. '</td>';
-                                        echo '<td>'. $donnees['heure_fin']. '</td>';
-                                        echo '</tr>';
-                                        $MatieresAffichees++;
-                                    }
+                                    //  if ($Dateactuelle < $date_compo) {
+                                    echo '<tr>';
+                                    echo '<td>'. $donnees['nom_mat']. '</td>';
+                                    echo '<td>'. $donnees['date_compo']. '</td>';
+                                    echo '<td>'. $donnees['heure_debut']. '</td>';
+                                    echo '<td>'. $donnees['heure_fin']. '</td>';
+                                    echo '</tr>';
+                                    $MatieresAffichees++;
+                                    //} elseif ($Dateactuelle == $date_compo && $HeureActuelle < $heure_fin) {
+                                    echo '<tr>';
+                                    echo '<td>'. $donnees['nom_mat']. '</td>';
+                                    echo '<td>'. $donnees['date_compo']. '</td>';
+                                    echo '<td>'. $donnees['heure_debut']. '</td>';
+                                    echo '<td>'. $donnees['heure_fin']. '</td>';
+                                    echo '</tr>';
+                                    $MatieresAffichees++;
+                                    //}
                                 }
                                 if ($MatieresAffichees == 0) {
                                     echo '<tr>';
