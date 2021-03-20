@@ -5,36 +5,37 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Gérer mes matières</title>
-        <?php include("includes/head.html"); ?>
-        <link rel="stylesheet" type="text/css" href="css/gerer_matieres.css">
-    </head>
 
-    <body>
-        <div class="container-fluid">
+<head>
+    <title>Gérer mes matières</title>
+    <?php include("includes/head.html"); ?>
+    <link rel="stylesheet" type="text/css" href="css/gerer_matieres.css">
+</head>
 
-            <?php include("includes/navbar-user.html"); ?>
+<body>
+    <div class="container-fluid">
 
-            <div class="row">
-                <section class="col-sm-6 col-sm-offset-3">
-                    <form method="post" action="traitements/traitement_gerer_matieres.php">
-                        <article class="panel panel-success">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-center">Composer</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Matieres</th>
-                                                <th>Dates de Compositions</th>
-                                                <th>Ajouter</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                    <?php
+        <?php include("includes/navbar-user.html"); ?>
+
+        <div class="row">
+            <section class="col-sm-6 col-sm-offset-3">
+                <form method="post" action="traitements/traitement_gerer_matieres.php">
+                    <article class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">Composer</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Matieres</th>
+                                            <th>Dates de Compositions</th>
+                                            <th>Ajouter</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
 
                                         try {
                                             $bdd = new PDO($_ENV['DB_SYS'].':host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
@@ -58,8 +59,6 @@
                                         $HeureActuelle = strtotime($HeureActuelle);
 
                                         $matieresTrouvee = false;
-
-var_dump($reponse);
 
                                         while ($donnees = $reponse->fetch()) {
                                             $heure_fin = strtotime($donnees['heure_fin']);
@@ -92,30 +91,30 @@ var_dump($reponse);
 
 
                                         $reponse->closeCursor();
-                                    ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="panel panel-danger">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-center">Ne plus composer</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Matieres</th>
-                                                <th>Dates de Compositions</th>
-                                                <th>Supprimer</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                    <article class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">Ne plus composer</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Matieres</th>
+                                            <th>Dates de Compositions</th>
+                                            <th>Supprimer</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                    <?php
+                                        <?php
 
                                         try {
                                             $bdd = new PDO($_ENV['DB_SYS'].':host='.$_ENV['DB_HOST'].';dbname='.$_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
@@ -124,7 +123,7 @@ var_dump($reponse);
                                             die('Erreur : '.$e->getMessage());
                                         }
 
-                                        $reponse = $bdd->query('SELECT COUNT(matricule) AS Nbr FROM enregistrer WHERE matricule="'.$_SESSION['matricule'].'"');
+                                        $reponse = $bdd->query('SELECT COUNT(matricule) AS Nbr FROM enregistrer WHERE matricule='.$_SESSION['matricule']);
 
                                         $donnees = $reponse->fetch();
                                         $reponse->closeCursor();
@@ -178,28 +177,31 @@ var_dump($reponse);
                                         }
 
                                         $reponse->closeCursor();
-                                    ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </article>
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4 hidden-xs">
-                                <input type="submit" class="btn btn-primary" value="Appliquer les modifications" disabled="disabled">
-                            </div>
-                            <div class="col-sm-4 col-sm-offset-4 visible-xs">
-                                <input type="submit" class="btn btn-primary btn-block" value="Appliquer les modifications" disabled="disabled">
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </form>
-                </section>
-            </div>
-
-            <?php include("includes/footer.html"); ?>
-
+                    </article>
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4 hidden-xs">
+                            <input type="submit" class="btn btn-primary" value="Appliquer les modifications"
+                                disabled="disabled">
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 visible-xs">
+                            <input type="submit" class="btn btn-primary btn-block" value="Appliquer les modifications"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                </form>
+            </section>
         </div>
 
-        <script src="js/gerer_matieres.js"></script>
-    </body>
+        <?php include("includes/footer.html"); ?>
+
+    </div>
+
+    <script src="js/gerer_matieres.js"></script>
+</body>
+
 </html>
