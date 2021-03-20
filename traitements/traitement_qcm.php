@@ -12,7 +12,7 @@
 		die('Erreur : '.$e->getMessage());
 	}
 
-	$req = $bdd->query('SET NAMES "utf8"');
+	
 
 	$rep = $bdd->prepare('SELECT heure_fin FROM matieres WHERE id_mat=?');
 	$rep->execute(array($_SESSION['id_mat']));

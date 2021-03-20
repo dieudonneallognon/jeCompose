@@ -16,7 +16,7 @@ try {
     die('Erreur : '.$e->getMessage());
 }
 
-// $req = $bdd->query('SET NAMES "utf8"');
+// 
 
 $unique = true;
 

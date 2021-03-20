@@ -43,7 +43,7 @@
                         die('Erreur : '.$e->getMessage());
                     }
 
-                    $req = $bdd->query('SET NAMES "utf8"');
+                    
 
                     $rep = $bdd->prepare('SELECT vraie_rep FROM corriger WHERE id_mat=? ORDER BY id_question');
                     $rep->execute(array($_SESSION['id_mat'])) or die(print_r($bdd->errorInfo()));
