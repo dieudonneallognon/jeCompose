@@ -49,7 +49,7 @@
 
 
                                 $Dateactuelle = $annee.'-'.$mois.'-'.$jour;
-                                var_dump($Dateactuelle);
+                                
                                 var_dump($reponse);
                                 $Dateactuelle = strtotime($Dateactuelle);
 
