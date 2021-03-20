@@ -42,12 +42,13 @@
 
 
 
-                            $reponse = $bdd->query('SELECT COUNT(matricule) AS Nbr FROM enregistrer WHERE matricule ='.$_SESSION['matricule']);
+                            $reponse = $bdd->query('SELECT COUNT(matricule) AS nbr FROM enregistrer WHERE matricule ='.$_SESSION['matricule']);
 
                             $donnees = $reponse->fetch();
 
-                            $nbrLigne = $donnees['Nbr'];
+                            $nbrLigne = $donnees['nbr'];
                             var_dump($donnees);
+                            var_dump($reponse);
 
                             $reponse->closeCursor();
 
@@ -142,7 +143,7 @@
                                 }
 
                                 $reponse->closeCursor();
-                            } elseif ($donnees['Nbr'] == 0) {
+                            } elseif ($nbrLigne == 0) {
                                 echo '<tr>';
                                 echo '<td> -- </td>';
                                 echo '<td> -- </td>';
