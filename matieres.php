@@ -71,7 +71,7 @@
                                     $date_compo = strtotime($donnees['date_compo']);
                                     var_dump($donnees);
 
-                                    if ($donnees['note'] == null) {
+                                    if (is_null($donnees['note'])) {
                                         if ($Dateactuelle < $date_compo) {
                                             $donnees['note'] = "Examen en attente";
 
