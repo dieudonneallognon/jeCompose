@@ -69,7 +69,7 @@
                                     $heure_fin = strtotime($donnees['heure_fin']);
                                     $heure_debut = strtotime($donnees['heure_debut']);
                                     $date_compo = strtotime($donnees['date_compo']);
-                                    var_dump($donnees['note']);
+                                    var_dump($donnees);
 
                                     if ($donnees['note'] == null) {
                                         if ($Dateactuelle < $date_compo) {
