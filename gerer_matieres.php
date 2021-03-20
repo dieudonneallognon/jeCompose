@@ -124,8 +124,6 @@ var_dump($reponse);
                                             die('Erreur : '.$e->getMessage());
                                         }
 
-                                        $req = $bdd->query('SET NAMES "utf8"');
-
                                         $reponse = $bdd->query('SELECT COUNT(matricule) AS Nbr FROM enregistrer WHERE matricule="'.$_SESSION['matricule'].'"');
 
                                         $donnees = $reponse->fetch();
