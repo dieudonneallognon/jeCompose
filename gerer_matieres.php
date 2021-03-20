@@ -123,14 +123,14 @@
                                             die('Erreur : '.$e->getMessage());
                                         }
 
-                                        $reponse = $bdd->query('SELECT COUNT(matricule) AS Nbr FROM enregistrer WHERE matricule='.$_SESSION['matricule']);
+                                        $reponse = $bdd->query('SELECT COUNT(matricule) AS nbr FROM enregistrer WHERE matricule='.$_SESSION['matricule']);
 
                                         $donnees = $reponse->fetch();
                                         $reponse->closeCursor();
 
                                         $matieresTrouvee = false;
 
-                                        if ($donnees['Nbr'] > 0) {
+                                        if ($donnees['nbr'] > 0) {
                                             $reponse = $bdd->query('SELECT * FROM enregistrer INNER JOIN  matieres ON enregistrer.id_mat = matieres.id_mat WHERE matricule=' .$_SESSION['matricule']. ' ORDER BY matieres.date_compo ASC, matieres.heure_debut ASC, matieres.heure_fin ASC');
 
                                             $jour = date('d');

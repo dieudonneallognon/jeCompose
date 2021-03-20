@@ -47,8 +47,6 @@
                             $donnees = $reponse->fetch();
 
                             $nbrLigne = $donnees['nbr'];
-                            var_dump($donnees);
-                            var_dump($reponse);
 
                             $reponse->closeCursor();
 
@@ -71,6 +69,7 @@
                                     $heure_fin = strtotime($donnees['heure_fin']);
                                     $heure_debut = strtotime($donnees['heure_debut']);
                                     $date_compo = strtotime($donnees['date_compo']);
+                                    var_dump($note);
 
                                     if ($donnees['note'] == null) {
                                         if ($Dateactuelle < $date_compo) {
@@ -177,22 +176,22 @@
                 </div>
 
                 <?php
-                    if ($nbrLigne == 0) {
-                        echo '<div class="row" style="margin-bottom: 30px;">
-                                <div class="col-lg-4 col-lg-offset-4 hidden-sm hidden-xs hidden-md">
-                                    <a href="gerer_matieres.php" class="btn btn-success">S\'enregistrer pour une matière !</a>
-                                </div>
-                                <div class="visible-sm">
-                                    <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
-                                </div>
-                                <div class="visible-xs">
-                                    <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
-                                </div>
-                                <div class="visible-md">
-                                    <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
-                                </div>
-                            </div>';
-                    }
+                if ($nbrLigne == 0) {
+                    echo '<div class="row" style="margin-bottom: 30px;">
+                            <div class="col-lg-4 col-lg-offset-4 hidden-sm hidden-xs hidden-md">
+                                <a href="gerer_matieres.php" class="btn btn-success">S\'enregistrer pour une matière !</a>
+                            </div>
+                            <div class="visible-sm">
+                                <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
+                            </div>
+                            <div class="visible-xs">
+                                <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
+                            </div>
+                            <div class="visible-md">
+                                <a href="gerer_matieres.php" class="btn btn-success btn-block">S\'enregistrer pour une matière !</a>
+                            </div>
+                        </div>';
+                }
                 ?>
 
             </section>
@@ -205,25 +204,25 @@
     <script src="js/matieres.js"></script>
 
     <?php
-        if (isset($_SESSION['mat']) && $_SESSION['mat'] == '1') {
-            echo '<script>
-                $(function (){
-                    $("div.ajoute").show(500).delay(2000).hide(500);
-                });
-            </script>';
+    if (isset($_SESSION['mat']) && $_SESSION['mat'] == '1') {
+        echo '<script>
+            $(function (){
+                $("div.ajoute").show(500).delay(2000).hide(500);
+            });
+        </script>';
 
-            unset($_SESSION['mat']);
-        }
+        unset($_SESSION['mat']);
+    }
 
-        if (isset($_SESSION['err_qcm']) && $_SESSION['err_qcm'] == '1') {
-            echo '<script>
-                $(function (){
-                    $("div.qcm-err").show(500).delay(2000).hide(500);
-                });
-            </script>';
+    if (isset($_SESSION['err_qcm']) && $_SESSION['err_qcm'] == '1') {
+        echo '<script>
+            $(function (){
+                $("div.qcm-err").show(500).delay(2000).hide(500);
+            });
+        </script>';
 
-            unset($_SESSION['err_qcm']);
-        }
+        unset($_SESSION['err_qcm']);
+    }
     ?>
 
 </body>
