@@ -51,7 +51,7 @@
                             $reponse->closeCursor();
 
                             if ($nbrLigne > 0) {
-                                $reponse = $bdd->query('SELECT * FROM enregistrer INNER JOIN  matieres ON enregistrer.id_mat = matieres.id_mat WHERE matricule =' .$_SESSION['matricule']. ' ORDER BY matieres.date_compo ASC, heure_debut ASC, heure_fin ASC');
+                                $reponse = $bdd->query('SELECT * FROM enregistrer INNER JOIN  matieres ON enregistrer.id_mat = matieres.id_mat WHERE enregistrer.matricule =' .$_SESSION['matricule']. ' ORDER BY matieres.date_compo ASC, matieres.heure_debut ASC, matieres.heure_fin ASC');
 
                                 $jour = date('d');
                                 $mois = date('m');
@@ -69,7 +69,7 @@
                                     $heure_fin = strtotime($donnees['heure_fin']);
                                     $heure_debut = strtotime($donnees['heure_debut']);
                                     $date_compo = strtotime($donnees['date_compo']);
-                                    var_dump($note);
+                                    var_dump($donnees['note']);
 
                                     if ($donnees['note'] == null) {
                                         if ($Dateactuelle < $date_compo) {
