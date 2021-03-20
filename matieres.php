@@ -47,6 +47,7 @@
                             $donnees = $reponse->fetch();
 
                             $nbrLigne = $donnees['Nbr'];
+                            var_dump($reponse);
 
                             $reponse->closeCursor();
 
